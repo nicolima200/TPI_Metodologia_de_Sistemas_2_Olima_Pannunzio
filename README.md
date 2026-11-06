@@ -39,7 +39,7 @@ Aplicación de consola en Java que permite gestionar usuarios y sus credenciales
    1. `creacion_tablas.sql`
    2. `datos_prueba.sql`
 2. Configurar la conexión a la base de datos:
-   - Copiar `db.properties.example` como `db.properties` en la raíz del proyecto y completar `db.url`, `db.user` y `db.password`. Este archivo está en `.gitignore` y no se sube al repositorio.
+   - Copiar `db.properties.example` como   `db.properties` en la raíz del proyecto y completar `db.url`, `db.user` y `db.password`. Este archivo está en `.gitignore` y no se sube al repositorio.
    - Como alternativa, definir las variables de entorno `DB_URL`, `DB_USER` y `DB_PASSWORD`, que tienen prioridad sobre el archivo.
 3. Agregar `Lib/mysql-connector-j-9.4.0/mysql-connector-j-9.4.0.jar` como dependencia del proyecto.
 4. Ejecutar `src/main/Main.java`.
