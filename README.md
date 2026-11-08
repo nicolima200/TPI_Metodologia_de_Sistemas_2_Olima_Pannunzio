@@ -15,7 +15,13 @@ Este repositorio parte del proyecto integrador de Programación II:
 
 Sobre esa versión se incorporaron los scripts SQL de creación de la base y de datos de prueba (que no estaban en el repositorio original), unificando los nombres de las tablas con los utilizados en el código.
 
-El tag `estado-inicial` identifica la versión base del sistema, sin refactorizar.
+## Tags del trabajo
+
+- `estado-inicial`: versión base del sistema, sin refactorizar.
+- `etapa-diagnostico`: estado diagnosticado (Etapa 3).
+- `etapa-refactoring` y `estadorefactorizado`: resultado de la serie de refactor, sobre el merge del último pull request.
+- `etapa-pruebas`: resultado de la verificación de comportamiento (Etapa 6).
+- `etapa-docs`: documentación de cierre (Etapa 8).
 
 ## Descripción
 
@@ -26,6 +32,25 @@ Aplicación de consola en Java que permite gestionar usuarios y sus credenciales
 - Buscar usuario por ID
 - Actualizar usuario
 - Eliminar usuario (baja lógica)
+
+## Estructura del código
+
+- `src/main`: interfaz de consola. `Main` compone las dependencias, `AppMenu` orquesta el menú y `ConsolaUI` encapsula la lectura y la escritura por consola.
+- `src/service`: reglas de negocio (`UsuarioService`, `CredencialAccesoService`), con el parameter object del alta en `dto/` y las excepciones de dominio en `exceptions/`.
+- `src/dao`: acceso a datos con JDBC, con el mapeo de filas extraído por DAO.
+- `src/entities`: modelo del dominio (`Usuario`, `CredencialAcceso`).
+- `src/config`: proveedor de conexiones (`ConnectionProvider` y su implementación `DbConnectionProvider`) y la clase de prueba de conexión.
+
+## Documentación
+
+La carpeta `docs/` reúne las decisiones y la evidencia del trabajo:
+
+- `docs/plan-refactor.md`: plan de la serie de siete pull requests, con cortes, criterios de aceptación y checklists de revisión.
+- `docs/etapa-4-trazabilidad.md`: trazabilidad de cada debilidad al principio o regla que la viola y al pull request que la resuelve.
+- `docs/code-review.md`: checklist técnico y resultado de las siete revisiones cruzadas.
+- `docs/verificacion-etapa6.md`: protocolo y evidencia de la verificación antes/después del comportamiento.
+
+El informe completo del trabajo se entrega en PDF junto con el repositorio.
 
 ## Tecnologías
 
